@@ -28,6 +28,9 @@ random_draw.o:$(COMMON)/random_draw.c
  
 MPI_bail_out.o:$(COMMON)/MPI_bail_out.c
 	$(CCOMPILER) $(CFLAGS) $(TUNEFLAGS) $(INCLUDEPATHSPLUS) -c $<
+
+UPCXX_bail_out.o:$(COMMON)/UPCXX_bail_out.cpp
+	$(UPCXX) $(CXXFLAGS) $(TUNEFLAGS) $(INCLUDEPATHSPLUS) -c $<
  
 SHMEM_bail_out.o:$(COMMON)/SHMEM_bail_out.c
 	$(CCOMPILER) $(CFLAGS) $(TUNEFLAGS) $(INCLUDEPATHSPLUS) -c $<

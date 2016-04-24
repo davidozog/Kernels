@@ -31,6 +31,12 @@ UPCC=
 #name of compile line flag enabling UPC if necessary, e.g. -h upc
 UPCFLAG=
 
+#name of UPC++ compiler, e.g. upc++
+UPCXX=
+
+#name of compile line flag enabling UPCXX if necessary, e.g. -h upc++ -fopenmp
+UPCXXFLAG=
+
 #name of MPI C compiler (to be used in Fine-Grain MPI context), e.g. mpicc
 FGMPICC=
 

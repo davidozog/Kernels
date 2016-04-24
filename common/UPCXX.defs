@@ -1,0 +1,8 @@
+include ../../common/make.defs
+ifeq ($(UPCXX),)
+    UPCXX=true
+endif
+CCOMPILER =$(UPCXX)
+CLINKER   = $(CCOMPILER)
+COMOBJS   = wtime.o UPCXX_bail_out.o
+PROG_ENV = $(UPCXXFLAG)
