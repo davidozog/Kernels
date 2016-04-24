@@ -31,7 +31,7 @@ POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************
 
 This files contains instructions for building and running PRKs using
-the Charm++, OpenSHMEM, Grappa, or Fine-Grain MPI runtimes.
+the Charm++, OpenSHMEM, Grappa, Fine-Grain MPI, or UPC++ runtimes.
 
 These runtimes need to be  installed, and you need to specify in file 
 PRKROOT/common/make.defs where they are located. Note that if Charm++,
@@ -70,3 +70,11 @@ conflict may be avoided by starting a sub-shell for FG_MPI runs and
 changing path variables only inside that shell. Scripts in the
 PRKROOT/Run directory employ this technique automatically and do 
 not need to be modified for proper execution.
+
+UPC++
+-----
+Instructions for building and setting up UPC++ are here: 
+https://bitbucket.org/upcxx/upcxx/wiki
+After installing, please be sure to use the "upc++" compiler driver 
+(wrapper) to compile and link the PRKs by setting UPCXX=upc++.
+
