@@ -38,6 +38,9 @@ FENIX_bail_out.o:$(COMMON)/FENIX_bail_out.c
  
 SHMEM_bail_out.o:$(COMMON)/SHMEM_bail_out.c
 	$(CCOMPILER) $(CFLAGS) $(TUNEFLAGS) $(INCLUDEPATHSPLUS) -c $<
+
+UPCXX_bail_out.o:$(COMMON)/UPCXX_bail_out.cpp
+	$(CCOMPILER) $(CFLAGS) $(TUNEFLAGS) $(INCLUDEPATHSPLUS) -c $<
  
 OPENMP_bail_out.o:$(COMMON)/OPENMP_bail_out.c
 	$(CCOMPILER) $(CFLAGS) $(TUNEFLAGS) $(INCLUDEPATHSPLUS) -c $<

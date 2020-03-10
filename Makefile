@@ -62,7 +62,8 @@ help:
 	@echo "       \"make allshmem\"     (re-)builds all SHMEM targets"
 	@echo "       \"make allmpishm\"    (re-)builds all MPI-3 shared memory segments targets"
 	@echo "       \"make allupc\"       (re-)builds all UPC targets"
-	@echo "       \"make allpgas\"      (re-)builds all PGAS (UPC, SHMEM, MPI-3 RMA) targets"
+	@echo "       \"make allupcxx\"     (re-)builds all UPC++ targets"
+	@echo "       \"make allpgas\"      (re-)builds all PGAS (UPC, UPC++, SHMEM, MPI-3 RMA) targets"
 	@echo "       \"make alldarwin\"    (re-)builds all of the above targets"
 	@echo "       \"make allcharm++\"   (re-)builds all Charm++ targets"
 	@echo "       \"make allampi\"      (re-)builds all Adaptive MPI targets"
@@ -77,7 +78,7 @@ help:
 	@echo "       \"make veryclean\"    removes some generated source files as well"
 
 all: alldarwin allfreaks allshared
-alldarwin: allserial allopenmp allmpi1 allfgmpi allmpiopenmp allmpirma allshmem allmpishm allupc allfortran allfenix
+alldarwin: allserial allopenmp allmpi1 allfgmpi allmpiopenmp allmpirma allshmem allmpishm allupc allupcxx allfortran allfenix
 allfreaks: allcharm++ allampi allgrappa alllegion
 allshared: allserial allopenmp allfortran allcxx allc1z
 allnew: allfortran allcxx allc1z
@@ -168,7 +169,10 @@ allupc:
 	cd UPC/Stencil;             $(MAKE) stencil   "DEFAULT_OPT_FLAGS   = $(PRK_FLAGS)"
 	cd UPC/Transpose;           $(MAKE) transpose "DEFAULT_OPT_FLAGS   = $(PRK_FLAGS)"
 
-allpgas: allshmem allupc allmpirma
+allupcxx:
+	cd UPC++/Transpose;         $(MAKE) transpose "DEFAULT_OPT_FLAGS   = $(PRK_FLAGS)"
+
+allpgas: allshmem allupc allupcxx allmpirma
 
 allopenmp:
 	cd OPENMP/DGEMM;            $(MAKE) dgemm     "DEFAULT_OPT_FLAGS   = $(PRK_FLAGS)"

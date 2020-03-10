@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013, Intel Corporation
+Copyright (c) 2020, Intel Corporation
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions 
@@ -85,7 +85,15 @@ POSSIBILITY OF SUCH DAMAGE.
   #define FSTR64U            "%16llu"
 #endif
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 extern double wtime(void);
+
+#if defined (__cplusplus)
+}
+#endif
 
 /*  We cannot use C11 aligned_alloc because of this GCC 5.3.0 bug:
  *  https://gcc.gnu.org/bugzilla/show_bug.cgi?id=69680 */
